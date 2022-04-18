@@ -6,44 +6,18 @@
           <img src="./assets/build-a-bot-logo.png" alt="" class="logo">
           Build-a-Bot
         </li>
-        <li>
-          User: {{ user.userName }}
-          <button @click="changeUserName">Change</button>
-        </li>
       </ul>
     </nav>
   </header>
   <main>
-    <RobotBuilder />
+    <router-view/>
   </main>
 </template>
 
 <script>
-// import HomePage from './home/HomePage.vue';
-import RobotBuilder from './build/RobotBuilder.vue';
 
 export default {
-  methods: {
-    changeUserName(){
-      this.user.userName = 'Eden';
-    }
-  },
-  data(){
-    return {
-      user: {
-        userName: 'Eddy'
-      }
-    };
-  },
-  provide(){
-    return {
-      user: this.user
-    };
-  },
   name: 'App',
-  components: {
-    RobotBuilder,
-  },
 };
 </script>
 
